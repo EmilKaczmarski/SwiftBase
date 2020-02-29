@@ -256,6 +256,12 @@ class CruiseShip {
                     i.value.removeGuest(guest: guests[guestId]!)
                 }
             }
+            
+            for i in bars {
+                if i.value.name != barName && i.value.containsGuest(guest: guests[guestId]!) {
+                    i.value.removeGuest(guest: guests[guestId]!)
+                }
+            }
             return true
         }
         return false
@@ -285,6 +291,13 @@ class CruiseShip {
                     i.value.removeGuest(guest: guests[guestId]!)
                 }
             }
+            
+            for i in restaurants {
+                if i.value.name != restaurantName && i.value.containsGuest(guest: guests[guestId]!) {
+                    i.value.removeGuest(guest: guests[guestId]!)
+                }
+            }
+            
             return true
         }
         return false
@@ -639,4 +652,3 @@ for i in 1...330 {
 }
 Tytanic.displayGuestsInBar(barName: "Nora")
 Tytanic.displayGuestsInRestaurant(restaurantName: "Manekin")
-
